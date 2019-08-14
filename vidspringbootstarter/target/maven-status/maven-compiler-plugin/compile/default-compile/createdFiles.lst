@@ -1,0 +1,6 @@
+cn\vgbhfive\vid\client\VID.class
+cn\vgbhfive\vid\service\model\ID.class
+cn\vgbhfive\vid\annotation\EnableVID.class
+cn\vgbhfive\vid\properties\IDProperties.class
+cn\vgbhfive\vid\service\model\IDService.class
+cn\vgbhfive\vid\config\VIDAutoConfigure.class

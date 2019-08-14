@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "spring.vid",
+      "type": "cn.vgbhfive.vid.properties.IDProperties",
+      "sourceType": "cn.vgbhfive.vid.properties.IDProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.vid.gen-method",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.vgbhfive.vid.properties.IDProperties"
+    },
+    {
+      "name": "spring.vid.machine",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.vgbhfive.vid.properties.IDProperties"
+    },
+    {
+      "name": "spring.vid.seq",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.vgbhfive.vid.properties.IDProperties"
+    },
+    {
+      "name": "spring.vid.time",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.vgbhfive.vid.properties.IDProperties"
+    },
+    {
+      "name": "spring.vid.type",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.vgbhfive.vid.properties.IDProperties"
+    },
+    {
+      "name": "spring.vid.version",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.vgbhfive.vid.properties.IDProperties"
+    }
+  ],
+  "hints": []
+}
