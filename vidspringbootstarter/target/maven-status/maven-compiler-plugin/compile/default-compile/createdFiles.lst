@@ -1,6 +1,16 @@
+cn\vgbhfive\vid\service\model\IDMeta.class
 cn\vgbhfive\vid\client\VID.class
+cn\vgbhfive\vid\service\converter\impl\ConverterIDImpl.class
+cn\vgbhfive\vid\service\populator\Populator.class
+cn\vgbhfive\vid\config\VIDAutoConfigure.class
+cn\vgbhfive\vid\service\converter\Converter.class
+cn\vgbhfive\vid\service\service\impl\IDServiceImpl.class
+cn\vgbhfive\vid\service\utils\TimeUtil.class
+cn\vgbhfive\vid\service\service\AbstractIDService.class
 cn\vgbhfive\vid\service\model\ID.class
 cn\vgbhfive\vid\annotation\EnableVID.class
 cn\vgbhfive\vid\properties\IDProperties.class
+cn\vgbhfive\vid\service\populator\impl\AtomicPopulator$Variant.class
+cn\vgbhfive\vid\service\model\IDMetaFactory.class
 cn\vgbhfive\vid\service\model\IDService.class
-cn\vgbhfive\vid\config\VIDAutoConfigure.class
+cn\vgbhfive\vid\service\populator\impl\AtomicPopulator.class

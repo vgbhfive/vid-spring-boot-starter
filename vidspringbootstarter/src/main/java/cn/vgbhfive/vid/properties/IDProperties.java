@@ -13,16 +13,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties("spring.vid") // 配置参数前缀
 public class IDProperties {
 
-    private Integer machine;
+    private Long machine;
 
-    private Integer seq;
+    private Long genMethod;
 
-    private Integer time;
+    private Long type;
 
-    private Integer genMethod;
-
-    private Integer type;
-
-    private Integer version;
+    private Long version;
 
 }

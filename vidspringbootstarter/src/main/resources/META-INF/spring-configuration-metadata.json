@@ -2,32 +2,22 @@
   "properties":[
     {
       "name" : "spring.vid.machine",
-      "type" : "java.lang.Integer",
-      "defaultValue" : 10
-    },
-    {
-      "name" : "spring.vid.seq",
-      "type" : "java.lang.Integer",
-      "defaultValue" : 20
-    },
-    {
-      "name" : "spring.vid.time",
-      "type" : "java.lang.Integer",
-      "defaultValue" : 30
+      "type" : "java.lang.Long",
+      "defaultValue" : 1
     },
     {
       "name" : "spring.vid.genMethod",
-      "type" : "java.lang.Integer",
-      "defaultValue" : 2
+      "type" : "java.lang.Long",
+      "defaultValue" : 1
     },
     {
       "name" : "spring.vid.type",
-      "type" : "java.lang.Integer",
+      "type" : "java.lang.Long",
       "defaultValue" : 1
     },
     {
       "name" : "spring.vid.version",
-      "type" : "java.lang.Integer",
+      "type" : "java.lang.Long",
       "defaultValue" : 1
     }
   ]

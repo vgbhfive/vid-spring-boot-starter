@@ -10,7 +10,7 @@ import java.util.Map;
  * @time: 2019/08/14
  * @author: Vgbh
  */
-//@Component
+@Component
 public interface IDService {
 
     /**
