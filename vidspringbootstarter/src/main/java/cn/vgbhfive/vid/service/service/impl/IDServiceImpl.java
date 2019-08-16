@@ -27,8 +27,7 @@ public class IDServiceImpl extends AbstractIDService {
     @Qualifier("atomic")
     private Populator populator;
 
-    public IDServiceImpl(IDMeta idMeta) {
-        super(idMeta);
+    public IDServiceImpl() {
     }
 
     /**

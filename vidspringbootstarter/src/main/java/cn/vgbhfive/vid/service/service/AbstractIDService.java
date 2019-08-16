@@ -17,6 +17,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 抽象IDService 实现类，负责聚合填充器和转换器
+ *
  * @time: 2019/08/15
  * @author: Vgbh
  */
@@ -39,8 +41,8 @@ public abstract class AbstractIDService implements IDService {
     @Autowired
     private IDProperties idProperties;
 
-    public AbstractIDService(IDMeta idMeta) {
-        this.idMeta = idMeta;
+    public AbstractIDService() {
+        this.idMeta = IDMetaFactory.getIDMeta();
     }
 
     /**
@@ -85,8 +87,8 @@ public abstract class AbstractIDService implements IDService {
         populateId(id);
 
         Long result = converter.convert(id);
-        if (logger.isInfoEnabled()) {
-            logger.info("ID :" + id + " -> " + result);
+        if (logger.isDebugEnabled()) {
+            logger.debug("ID :" + id + " -> " + result);
         }
         return result;
     }
@@ -105,10 +107,11 @@ public abstract class AbstractIDService implements IDService {
         map.put("Time", result.getTime().toString());
         map.put("Type", result.getType().toString());
         map.put("Version", result.getVersion().toString());
+
+        if (logger.isDebugEnabled()) {
+            logger.debug("Long :" + id + " -> " + map.toString());
+        }
         return map;
     }
 
-    public void setConverter(Converter converter) {
-        this.converter = converter;
-    }
 }

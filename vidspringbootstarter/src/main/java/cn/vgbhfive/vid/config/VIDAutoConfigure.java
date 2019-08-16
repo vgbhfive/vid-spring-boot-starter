@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableConfigurationProperties(IDProperties.class)
+@ComponentScan("cn.vgbhfive.vid")
 public class VIDAutoConfigure {
 
     private static final Logger logger = LoggerFactory.getLogger(VIDAutoConfigure.class);

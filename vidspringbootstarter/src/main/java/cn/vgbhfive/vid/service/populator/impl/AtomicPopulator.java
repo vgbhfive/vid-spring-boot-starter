@@ -3,6 +3,7 @@ package cn.vgbhfive.vid.service.populator.impl;
 import cn.vgbhfive.vid.service.model.ID;
 import cn.vgbhfive.vid.service.model.IDMeta;
 import cn.vgbhfive.vid.service.populator.Populator;
+import cn.vgbhfive.vid.service.utils.TimeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -39,7 +40,39 @@ public class AtomicPopulator implements Populator {
      * @param idMeta
      */
     public void populatorID(ID id, IDMeta idMeta) {
-        //TODO
+        Variant varOld, varNew;
+        long timestamp, sequence;
+
+        while (true) {
+            varOld = atomic.get();
+
+            timestamp = TimeUtil.genTime();
+            TimeUtil.validateTimestamp(varOld.lastTimeStamp, timestamp);
+
+            sequence = varOld.sequence;
+
+            if (timestamp == varOld.lastTimeStamp) {
+                sequence++;
+                sequence &= idMeta.getSeqBitsMask();
+                if (sequence == 0) {
+                    timestamp = TimeUtil.tillNextTimeUnit(varOld.lastTimeStamp);
+                }
+            } else {
+                sequence = 0;
+            }
+
+            varNew = new Variant();
+            varNew.sequence = sequence;
+            varNew.lastTimeStamp = timestamp;
+
+            if (atomic.compareAndSet(varOld, varNew)) {
+                id.setSeq(sequence);
+                id.setTime(timestamp);
+
+                break;
+            }
+
+        }
     }
 
     /**

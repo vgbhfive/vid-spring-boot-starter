@@ -44,8 +44,20 @@ public class ConverterIDImpl implements Converter {
      * @return Long
      */
     public long doConvert(ID id, IDMeta idMeta) {
-        // TODO
-        return 0;
+        long result = 0;
+
+        result |= id.getMachine();
+        result |= id.getSeq() << idMeta.getSeqBitsStartPos();
+        result |= id.getTime() << idMeta.getTimeBitsStartPos();
+        result |= id.getGenMethod() << idMeta.getGenMethodBitsStartPos();
+        result |= id.getType() << idMeta.getTypeBitsStartPos();
+        result |= id.getVersion() << idMeta.getVersionBitsStartPos();
+
+        if (logger.isDebugEnabled()) {
+            logger.debug(" ID ---> Long  return:" + result);
+        }
+
+        return result;
     }
 
     /**
@@ -64,7 +76,19 @@ public class ConverterIDImpl implements Converter {
      * @return ID
      */
     public ID doConvert(long id, IDMeta idMeta) {
-        // TODO
-        return null;
+        ID result = new ID();
+
+        result.setMachine(id & idMeta.getMachineBitsMask());
+        result.setSeq((id >>> idMeta.getSeqBitsStartPos()) & idMeta.getSeqBitsMask());
+        result.setTime((id >>> idMeta.getTimeBitsStartPos()) & idMeta.getTimeBitsMask());
+        result.setGenMethod((id >>> idMeta.getGenMethodBitsStartPos()) & idMeta.getGenMethodBitsMask());
+        result.setType((id >>> idMeta.getTypeBitsStartPos()) & idMeta.getTypeBitsMask());
+        result.setVersion((id >>> idMeta.getVersionBitsStartPos()) & idMeta.getVersionBitsMask());
+
+        if (logger.isDebugEnabled()) {
+            logger.debug(" Long ---> ID  return:" + result.toString());
+        }
+
+        return result;
     }
 }

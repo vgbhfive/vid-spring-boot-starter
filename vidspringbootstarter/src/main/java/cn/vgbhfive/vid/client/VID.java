@@ -1,6 +1,8 @@
 package cn.vgbhfive.vid.client;
 
 import cn.vgbhfive.vid.properties.IDProperties;
+import cn.vgbhfive.vid.service.model.IDService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
 
@@ -11,6 +13,9 @@ import java.util.Map;
  * @author: Vgbh
  */
 public class VID {
+
+    @Autowired
+    private IDService idService;
 
     private IDProperties idProperties;
 
@@ -34,7 +39,7 @@ public class VID {
      * @return ID
      */
     public Long genId() {
-        return null;
+        return idService.genId();
     }
 
     /**
