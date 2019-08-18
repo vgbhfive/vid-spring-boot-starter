@@ -50,10 +50,10 @@ public abstract class AbstractIDService implements IDService {
      */
     public void init() {
         // 初始化参数
-        this.machine = idProperties.getMachine();
-        this.genMethod = idProperties.getGenMethod();
-        this.type = idProperties.getType();
-        this.version = idProperties.getVersion();
+        this.machine = idProperties.getMachine(); // 取值范围 0 ~ 2^10-1
+        this.genMethod = idProperties.getGenMethod(); // 取值范围 0 ~ 2^2-1
+        this.type = idProperties.getType(); // 取值范围 0 ~ 1
+        this.version = idProperties.getVersion(); // 取值范围 0 ~ 1
 
         // 参数校验
         if (this.machine < 0) {

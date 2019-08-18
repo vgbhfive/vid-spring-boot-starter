@@ -6,6 +6,38 @@
 内部通过**位运算**实现快速的计算和生成，为系统提供更快的支持速度。
 
 ## Using
+1. Download
+```
+git clone git@github.com:vgbhfive/vid-spring-boot-starter.git
+```
+
+2. Make
+```
+mvn clean package
+```
+
+3. Depandency
+```
+<!--vid-->
+<dependency>
+    <groupId>cn.vgbhfive.vid</groupId>
+    <artifactId>vid-spring-boot-starter</artifactId>
+    <version>0.3.1</version>
+</dependency>
+```
+
+4. Application.properties
+```
+# vid
+# 取值范围 0 ~ 2^10-1
+spring.vid.machine=1
+# 取值范围 0 ~ 2^2-1
+spring.vid.gen-method=1
+# 取值范围 0 ~ 1
+spring.vid.type=1
+# 取值范围 0 ~ 1 (0:正数，1:负数)
+spring.vid.version=0
+```
 
 ## Version
 
@@ -42,4 +74,14 @@ spring.vid.type=1
 spring.vid.version=1
 ```
 ![0.3.0-1.jps](/images/0.3.0-1.jpg)
+
+### Version 0.3.1
+解决了存在的小问题，第一个完全正式可以用的版本。<br>
+application.properties:
+```
+spring.vid.machine=1
+spring.vid.gen-method=1
+spring.vid.type=1
+spring.vid.version=0
+```
 
