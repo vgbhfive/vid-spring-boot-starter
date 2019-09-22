@@ -42,6 +42,11 @@ spring.vid.version=0
 ## Author
 [My Blog](https://vgbhfive.cn)
 
+## PR
+自行Fork，推送后，我会加入对应的内容。
+
+如果你先联系我，请发邮件：vgbhfive@foxmail.com
+
 ## Version
 
 ### Version 0.1.0
