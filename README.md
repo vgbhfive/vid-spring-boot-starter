@@ -29,15 +29,18 @@ mvn clean package
 4. Application.properties
 ```
 # vid
-# 取值范围 0 ~ 2^10-1
+# 机器号 -> 取值范围 0 ~ 2^10-1
 spring.vid.machine=1
-# 取值范围 0 ~ 2^2-1
+# 生成方式 -> 取值范围 0 ~ 2^2-1
 spring.vid.gen-method=1
-# 取值范围 0 ~ 1
+# 类型 -> 取值范围 0 ~ 1
 spring.vid.type=1
-# 取值范围 0 ~ 1 (0:正数，1:负数)
+# 版本 -> 取值范围 0 ~ 1 (0:正数，1:负数)
 spring.vid.version=0
 ```
+
+## Author
+[My Blog](https://vgbhfive.cn)
 
 ## Version
 
@@ -77,6 +80,16 @@ spring.vid.version=1
 
 ### Version 0.3.1
 解决了存在的小问题，第一个完全正式可以用的版本。<br>
+application.properties:
+```
+spring.vid.machine=1
+spring.vid.gen-method=1
+spring.vid.type=1
+spring.vid.version=0
+```
+
+### Version 1.0.0
+功能全部实现，第一个完全正式可以用的版本。<br>
 application.properties:
 ```
 spring.vid.machine=1

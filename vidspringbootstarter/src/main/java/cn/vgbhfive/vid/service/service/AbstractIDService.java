@@ -34,6 +34,7 @@ public abstract class AbstractIDService implements IDService {
     protected Long genMethod;
     protected Long type;
     protected Long version;
+    protected Long seq;
 
     @Autowired
     protected Converter converter;
@@ -42,7 +43,7 @@ public abstract class AbstractIDService implements IDService {
     private IDProperties idProperties;
 
     public AbstractIDService() {
-        this.idMeta = IDMetaFactory.getIDMeta();
+        this.idMeta = IDMetaFactory.getIDMeta((long) 1);
     }
 
     /**
@@ -50,6 +51,7 @@ public abstract class AbstractIDService implements IDService {
      */
     public void init() {
         // 初始化参数
+
         this.machine = idProperties.getMachine(); // 取值范围 0 ~ 2^10-1
         this.genMethod = idProperties.getGenMethod(); // 取值范围 0 ~ 2^2-1
         this.type = idProperties.getType(); // 取值范围 0 ~ 1
@@ -63,7 +65,7 @@ public abstract class AbstractIDService implements IDService {
 
         // 构造 ID 模式类
         if (null == idMeta) {
-            idMeta = IDMetaFactory.getIDMeta();
+            idMeta = IDMetaFactory.getIDMeta(type);
         }
 
         // 构建 ID/Long 转换类
